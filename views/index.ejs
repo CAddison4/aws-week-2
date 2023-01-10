@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+    <meta name="viewport" contents="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <title>Notes Application</title>
 </head>
@@ -11,7 +11,7 @@
     <h1>Notes Application</h1>
     <form action="createNote" method="post">
         <input type="text" name="title" placeholder="Title">
-        <input type="text" name="content" placeholder="Content">
+        <input type="text" name="contents" placeholder="contents">
         <button type="submit">Add Note</button>
     </form>
     <ul>
@@ -19,7 +19,7 @@
         <% myNotes.forEach(myNote => { %>
             <li>
                 <h2><%= myNote.title %></h2>
-                <p><%= myNote.content %></p>
+                <p><%= myNote.contents %></p>
                 <form action="deleteNote" method="post">
                     <input type="hidden" name="id" value="<%= myNotes[i].id %>">
                     <button type="submit">Delete Note</button>

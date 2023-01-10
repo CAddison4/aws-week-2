@@ -14,9 +14,9 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/createNote', async (req, res) => {
-    const {title, content} = req.body
+    const {title, contents} = req.body
 
-    await database.addNote(title, content)
+    await database.addNote(title, contents)
 
     res.redirect('/')   
 })

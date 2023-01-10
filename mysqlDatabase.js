@@ -17,26 +17,19 @@ export async function getNotes() {
     SELECT * 
     FROM notes
     `
-
-    try{
-        const [rows] = await pool.query(query)
-        return rows
-    } catch(error) {
-        console.log("error", error)
-        return []
-    }
-    
+    const [rows] = await pool.query(query)
+    return rows
     
 }
 
 //Create Note
-export async function addNote(title, content) {
+export async function addNote(title, contents) {
     const query = `
-    INSERT INTO notes (title, content)
+    INSERT INTO notes (title, contents)
     VALUES (?, ?)
     `
 
-    await pool.query(query, [title, content])
+    await pool.query(query, [title, contents])
 }
 
 //Delete Note
