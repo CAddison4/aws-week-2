@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Notes Application</title>
+</head>
+<body>
+    <h1>Notes Application</h1>
+    <form action="createNote" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="content" placeholder="Content">
+        <button type="submit">Add Note</button>
+    </form>
+    <ul>
+        <% let i = 0 %>
+        <% myNotes.forEach(myNote => { %>
+            <li>
+                <h2><%= myNote.title %></h2>
+                <p><%= myNote.content %></p>
+                <form action="deleteNote" method="post">
+                    <input type="hidden" name="id" value="<%= myNotes[i].id %>">
+                    <button type="submit">Delete Note</button>
+                </form>
+            </li>
+            <% i++ %>
+        <% }) %>
+    </ul>
+</body>
+</html>
