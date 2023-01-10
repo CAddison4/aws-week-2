@@ -6,8 +6,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "npx nodemon server.js",
-    "build": "CI=false react-scripts build",
+    "dev": "nodemon server.js"
+    
   },
   "repository": {
     "type": "git",
