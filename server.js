@@ -35,9 +35,9 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-//write error handler express 5
-app.use((err, req, res, next) => {
-    console.error(err.stack)
-    res.status(500).send('Something broke!')
-  })
+// //write error handler express 5
+// app.use((err, req, res, next) => {
+//     console.error(err.stack)
+//     res.status(500).send('Something broke!')
+//   })
 
