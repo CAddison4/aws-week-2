@@ -24,6 +24,9 @@
                     <input type="hidden" name="id" value="<%= myNotes[i].id %>">
                     <button type="submit">Delete Note</button>
                 </form>
+                <form action="viewNote" method="get">
+                    <input type="hidden" name="id" value="<%= myNotes[i].id %>">
+                    <button type="submit">View Note</button>
             </li>
             <% i++ %>
         <% }) %>

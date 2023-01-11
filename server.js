@@ -13,6 +13,14 @@ app.get('/', async (req, res) => {
     res.render('index.ejs', {myNotes: notes})
 })
 
+//get note by index
+app.get('/:id', async (req, res) => {
+    const id = req.params.id
+    const notes = await database.getNotes()
+    const note = notes.find(note => note.id == id)
+    res.render('note.ejs', {note})  
+})
+
 app.post('/createNote', async (req, res) => {
     const {title, contents} = req.body
 
